@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Focus Sound Machine</title>
+  <link rel="stylesheet" href="/styles.css" />
+</head>
+<body>
+  <div class="app">
+    <header class="header">
+      <p class="project-label">Focus Sound Machine</p>
+      <h1>Relaxing Noise</h1>
+      <p class="tagline">Calm focus · steady sound</p>
+    </header>
+
+    <main class="panel">
+      <div class="control">
+        <label class="control-label" for="soundSource">
+          <span>Sound Source</span>
+          <span class="value" id="sourceStatus">Loading...</span>
+        </label>
+        <select id="soundSource" aria-label="Choose sound source"></select>
+        <p class="hint">Generated white/brown noise or ambience loops from the server. Tone applies only to generated sources.</p>
+      </div>
+
+      <div class="transport">
+        <button type="button" id="playPause" class="btn-play" aria-pressed="false" aria-label="Play">
+          <span class="icon-play" aria-hidden="true"></span>
+          <span class="btn-label">Play</span>
+        </button>
+      </div>
+
+      <div class="control tone-control" id="toneControl">
+        <label class="control-label" for="frequency">
+          <span>Tone</span>
+          <span class="value" id="frequencyValue">740 Hz</span>
+        </label>
+        <input
+          type="range"
+          id="frequency"
+          min="200"
+          max="20000"
+          step="10"
+          value="740"
+        />
+        <p class="hint">Lower = softer / darker; higher = brighter full-spectrum noise.</p>
+      </div>
+
+      <div class="control">
+        <label class="control-label" for="volume">
+          <span>Volume</span>
+          <span class="value" id="volumeValue">20%</span>
+        </label>
+        <input type="range" id="volume" min="0" max="100" value="20" />
+      </div>
+
+      <div class="control">
+        <label class="control-label" for="pan">
+          <span>Pan</span>
+          <span class="value" id="panValue">Center</span>
+        </label>
+        <div class="pan-row">
+          <span class="pan-edge" aria-hidden="true">L</span>
+          <input type="range" id="pan" min="-100" max="100" step="1" value="0" />
+          <span class="pan-edge" aria-hidden="true">R</span>
+        </div>
+        <p class="hint">Slide left or right to balance audio between speakers.</p>
+      </div>
+
+      <div class="control timer-block">
+        <label class="control-label" for="timerMinutes">
+          <span>Timer</span>
+          <span class="value" id="timerDisplay">Off</span>
+        </label>
+        <div class="timer-row">
+          <input
+            type="number"
+            id="timerMinutes"
+            min="0"
+            max="999"
+            step="1"
+            value="0"
+            placeholder="Minutes"
+          />
+          <span class="timer-unit">min</span>
+        </div>
+        <p class="hint">0 = play until paused. Volume, pan, and timer are validated on the server.</p>
+      </div>
+    </main>
+
+    <footer class="footer">
+      <p><a href="/credits" class="footer-link">Sound credits</a></p>
+    </footer>
+  </div>
+  <script src="/app.js"></script>
+</body>
+</html>
