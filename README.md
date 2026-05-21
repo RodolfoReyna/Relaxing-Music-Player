@@ -114,4 +114,4 @@ If PowerShell blocks `activate`, use `.venv\Scripts\uvicorn.exe` as shown above.
 
 ## Safety
 
-Use headphones at moderate volume. The server applies 20% output attenuation on top of the volume slider. Browser autoplay rules require a user click before audio starts.
+Use headphones at moderate volume. The server applies 50% output attenuation on top of the volume slider. Browser autoplay rules require a user click before audio starts.
